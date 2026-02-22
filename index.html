@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Install Project SDSG</title>
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Project SDSG Installer</h1>
         <button id="install">Install</button>
-        <p id="status"></p>
+        <p id="status">Waiting...</p>
+        <progress id="progressBar" max="100" value="0"></progress>
     </div>
 
     <script src="index.js"></script>
