@@ -3,17 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Install Project SDSG</title>
+    <title>Project SDSG Installer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Project SDSG Installer</h1>
-        <button id="install">Install</button>
+        <div class="buttons">
+            <button id="install">Install</button>
+            <button id="originals">SDSG Originals</button>
+            <button id="gallery">SDSG Gallery</button>
+        </div>
         <p id="status">Waiting...</p>
         <progress id="progressBar" max="100" value="0"></progress>
     </div>
-
+    <div id="viewer">
+        <button id="prev">◀</button>
+        <iframe id="frame"></iframe>
+        <button id="next">▶</button>
+        <button id="close">X</button>
+        <h2 id="gameTitle"></h2>
+    </div>
+    <div id="lorePanel">
+        <button id="closeLore">X</button>
+        <div id="loreContent"></div>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>

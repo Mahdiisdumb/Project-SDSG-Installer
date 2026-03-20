@@ -1,0 +1,82 @@
+[
+  {
+    "name": "AoOni",
+    "path": "./Games/AoOni/run.html"
+  },
+  {
+    "name": "BELTAGOON",
+    "path": "./Games/BELTAGOON/run.html"
+  },
+  {
+    "name": "Caesar-Cipher",
+    "path": "./Games/Caesar-Cipher/run.html"
+  },
+  {
+    "name": "Catch-Diddy",
+    "path": "./Games/Catch-Diddy/run.html"
+  },
+  {
+    "name": "Catch-Stein",
+    "path": "./Games/Catch-Stein/run.html"
+  },
+  {
+    "name": "Codename-Protect",
+    "path": "./Games/Codename-Protect/run.html"
+  },
+  {
+    "name": "CookieClicker",
+    "path": "./Games/CookieClicker/run.html"
+  },
+  {
+    "name": "FeatusFight",
+    "path": "./Games/FeatusFight/run.html"
+  },
+  {
+    "name": "Fish",
+    "path": "./Games/Fish/run.html"
+  },
+  {
+    "name": "FlappyBird",
+    "path": "./Games/FlappyBird/run.html"
+  },
+  {
+    "name": "FlipAMeanGuy",
+    "path": "./Games/FlipAMeanGuy/run.html"
+  },
+  {
+    "name": "HalfPrice",
+    "path": "./Games/HalfPrice/run.html"
+  },
+  {
+    "name": "Parry-Sim",
+    "path": "./Games/Parry-Sim/run.html"
+  },
+  {
+    "name": "Platformer",
+    "path": "./Games/Platformer/run.html"
+  },
+  {
+    "name": "Run-From-Diddy",
+    "path": "./Games/Run-From-Diddy/run.html"
+  },
+  {
+    "name": "Run-From-Stein",
+    "path": "./Games/Run-From-Stein/run.html"
+  },
+  {
+    "name": "Snake",
+    "path": "./Games/Snake/run.html"
+  },
+  {
+    "name": "ZombiecareVsMahdiStudios",
+    "path": "./Games/ZombiecareVsMahdiStudios/run.html"
+  },
+  {
+    "name": "ZombieRaid",
+    "path": "./Games/ZombieRaid/run.html"
+  },
+  {
+    "name": "ZombieRaid-Waves",
+    "path": "./Games/ZombieRaid-Waves/run.html"
+  }
+]

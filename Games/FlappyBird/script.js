@@ -1,0 +1,1 @@
+document.getElementById("e").onclick=function(){location.href="./E/run.html"};document.getElementById("n").onclick=function(){location.href="./N/run.html"};document.getElementById("h").onclick=function(){location.href="./H/run.html"}
