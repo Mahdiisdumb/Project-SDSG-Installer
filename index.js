@@ -1,4 +1,4 @@
-const parts = Array.from({ length: 22 }, (_, i) =>
+const parts = Array.from({ length: 20 }, (_, i) =>
     `Project-SDSG.part.zip.${String(i + 1).padStart(3, '0')}`
 );
 
