@@ -16,10 +16,6 @@
     "path": "./Games/Catch-Diddy/run.html"
   },
   {
-    "name": "Catch-Stein",
-    "path": "./Games/Catch-Stein/run.html"
-  },
-  {
     "name": "Codename-Protect",
     "path": "./Games/Codename-Protect/run.html"
   },
@@ -58,10 +54,6 @@
   {
     "name": "Run-From-Diddy",
     "path": "./Games/Run-From-Diddy/run.html"
-  },
-  {
-    "name": "Run-From-Stein",
-    "path": "./Games/Run-From-Stein/run.html"
   },
   {
     "name": "Snake",
