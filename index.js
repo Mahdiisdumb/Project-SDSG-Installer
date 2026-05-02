@@ -6,7 +6,9 @@ const folder = './archive/';
 
 const status = document.getElementById('status');
 const progressBar = document.getElementById('progressBar');
-document.getElementById('install').onclick = async () => {
+const installBtn = document.getElementById('install');
+
+installBtn.onclick = async () => {
     try {
         const handle = await window.showSaveFilePicker({
             suggestedName: 'Project SDSG.zip',
@@ -15,20 +17,16 @@ document.getElementById('install').onclick = async () => {
 
         const writable = await handle.createWritable();
 
-        let total = 0;
-        let sizes = [];
-
-        for (const part of parts) {
-            const res = await fetch(folder + part, { method: 'HEAD' });
-            const size = Number(res.headers.get('Content-Length')) || 0;
-            sizes.push(size);
-            total += size;
-        }
-
         let downloaded = 0;
+
+        progressBar.max = parts.length;
+        progressBar.value = 0;
 
         for (let i = 0; i < parts.length; i++) {
             const res = await fetch(folder + parts[i]);
+
+            if (!res.body) throw new Error("Stream not supported");
+
             const reader = res.body.getReader();
 
             while (true) {
@@ -36,15 +34,22 @@ document.getElementById('install').onclick = async () => {
                 if (done) break;
 
                 await writable.write(value);
-                downloaded += value.length;
 
-                progressBar.value = (downloaded / total) * 100;
+                downloaded += value.byteLength;
+
+                // safe progress (NO division, NO Infinity)
+                progressBar.value = i + (value ? 0.5 : 0);
+
                 status.textContent =
-                    `${(downloaded / 1e6).toFixed(2)}MB / ${(total / 1e6).toFixed(2)}MB`;
+                    `${(downloaded / 1e6).toFixed(2)}MB downloaded`;
             }
+
+            progressBar.value = i + 1;
         }
 
         await writable.close();
+
+        progressBar.value = parts.length;
         status.textContent = "Done";
 
     } catch (e) {
@@ -52,7 +57,10 @@ document.getElementById('install').onclick = async () => {
     }
 };
 
+// ---------- GAME SYSTEM ----------
+
 let games = [];
+
 fetch('./games.json')
     .then(r => r.json())
     .then(data => games = data);
@@ -65,7 +73,9 @@ let current = 0;
 
 function loadGame(i) {
     if (!games.length) return;
+
     current = (i + games.length) % games.length;
+
     frame.src = games[current].path;
     title.textContent = games[current].name;
 }
@@ -77,27 +87,24 @@ document.getElementById('originals').onclick = () => {
 
 document.getElementById('prev').onclick = () => loadGame(current - 1);
 document.getElementById('next').onclick = () => loadGame(current + 1);
+
 document.getElementById('close').onclick = () => {
     viewer.style.display = 'none';
     frame.src = '';
 };
+
+// ---------- LORE PANEL ----------
 
 const loreHTML = `
 <p>A local game collection packaged and maintained by Mahdiisdumb.</p>
 
 <h2>Overview</h2>
 <p>Project SDSG was created and is maintained by <strong>Mahdiisdumb</strong>. 
-The project began as a portable collection designed to run from local HTML files. 
-It was originally distributed on removable media and archived as USB.zip and later renamed to Project SDSG (School Defying Software Games).</p>
-
-<p>Note: SDSG is provided as a community project for offline use and local testing. 
-The project does not encourage bypassing security controls; local packaging simply ensures availability when network access is limited.</p>
+It started as a local offline HTML collection.</p>
 
 <h2>Maintainer & Contributors</h2>
 <p><strong>Maintainer:</strong> Mahdi</p>
 <p><strong>Contributors:</strong> Mahdi, Jameson, Luke, Andrew, Christopher, Blake, Ibraheem, Jacob, Sean</p>
-
-<p>Project SDSG Community project. For full project details, see the repository.</p>
 `;
 
 const lorePanel = document.getElementById('lorePanel');
