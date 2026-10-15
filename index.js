@@ -105,7 +105,7 @@ It started as a web proxy then became a whole html5 games site(that worked local
 
 <h2>Maintainer & Contributors</h2>
 <p><strong>Maintainer:</strong> Mahdi</p>
-<p><strong>Contributors:</strong> Mahdi, Jameson, Luke, Andrew, Christopher, Blake, Ibraheem, Jacob, Sean</p>
+<p><strong>Contributors:</strong> Mahdi, Jameson, Luke, Andrew, Christopher, Ibraheem, Jacob, Sean</p>
 `;
 
 const lorePanel = document.getElementById('lorePanel');
