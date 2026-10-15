@@ -1,4 +1,4 @@
-const parts = Array.from({ length: 19 }, (_, i) =>
+const parts = Array.from({ length: 24 }, (_, i) =>
     `Project-SDSG.part.zip.${String(i + 1).padStart(3, '0')}`
 );
 
@@ -100,7 +100,8 @@ const loreHTML = `
 
 <h2>Overview</h2>
 <p>Project SDSG was created and is maintained by <strong>Mahdiisdumb</strong>. 
-It started as a local offline HTML collection.</p>
+It started as a web proxy then became a whole html5 games site(that worked locally)</p>
+<p>after that more things got added and i got smarter leading to more game support like game maker and unity decomps(which require wifi)</p>
 
 <h2>Maintainer & Contributors</h2>
 <p><strong>Maintainer:</strong> Mahdi</p>
